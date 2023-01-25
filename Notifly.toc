@@ -1,4 +1,4 @@
-## Interface: 100002
+## Interface: 100005
 ## Title: |cff1784d1Notifly|r
 ## Notes: A simple addon that plays a sound when you get a whisper.
 ## Version: 1.0.2
