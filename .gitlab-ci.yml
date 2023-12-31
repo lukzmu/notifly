@@ -1,6 +1,9 @@
 stages:
   - publish
 
+before_script:
+  - apt-get install curl zip jq
+
 🚀 publish package:
   stage: publish
   only: 
