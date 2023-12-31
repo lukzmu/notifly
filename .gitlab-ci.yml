@@ -2,8 +2,10 @@ stages:
   - publish
 
 🚀 publish package:
-  stage: publish
-  only: tags
+  stage: 
+    - publish
+  only: 
+    - tags
   script:
     - cd .release
     - chmod +x release.sh
