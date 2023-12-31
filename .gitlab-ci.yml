@@ -3,15 +3,13 @@ image: "ubuntu:20.04"
 stages:
   - publish
 
-before_script:
-  - apt-get update
-  - apt-get install -y curl zip jq
-
 🚀 publish package:
   stage: publish
   only: 
     - tags
   script:
+    - apt-get update
+    - apt-get install -y curl zip jq git
     - cd .release
     - chmod +x release.sh
     - ./release.sh
