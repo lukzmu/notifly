@@ -2571,6 +2571,10 @@ upload_curseforge() {
 			version_id=$( echo "$_cf_versions" | jq -r --arg v "$version_name" --argjson t "$game_id" '.[] | select(.gameVersionTypeID == $t and .name == $v) | .id' )
 			_cf_game_version_id+=",${version_id}"
 		done
+		echo "Show debuf information"
+		echo $_cf_versions
+		echo $_cf_game_version
+		echo $_cf_game_version_id
 		_cf_game_version_id="[${_cf_game_version_id#,}]"
 		_cf_game_version="${_cf_game_version#,}"
 	fi
