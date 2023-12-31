@@ -7,9 +7,12 @@ stages:
   stage: publish
   only: 
     - tags
+  variables:
+    CF_API_KEY: $CF_API_KEY
   script:
     - apt-get update
     - apt-get install -y curl zip jq git
+    - git --version
     - cd .release
     - chmod +x release.sh
     - ./release.sh
