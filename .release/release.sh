@@ -2541,6 +2541,7 @@ upload_curseforge() {
 
 	local _cf_game_version_id _cf_game_version _cf_versions
 	_cf_versions=$( curl -s -H "x-api-token: $cf_token" "$project_site/api/game/versions" )
+	echo $_cf_versions
 	if [[ -n $_cf_versions && $_cf_versions != *"errorMessage"* ]]; then
 		_cf_game_version_id=
 		_cf_game_version=
