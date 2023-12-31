@@ -2,8 +2,7 @@ stages:
   - publish
 
 🚀 publish package:
-  stage: 
-    - publish
+  stage: publish
   only: 
     - tags
   script:
