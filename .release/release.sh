@@ -2541,6 +2541,7 @@ upload_curseforge() {
 
 	local _cf_game_version_id _cf_game_version _cf_versions
 	_cf_versions=$( curl -s -H "x-api-token: $cf_token" "$project_site/api/game/versions" )
+	echo $_cf_versions
 	if [[ -n $_cf_versions && $_cf_versions != *"errorMessage"* ]]; then
 		_cf_game_version_id=
 		_cf_game_version=
@@ -2571,10 +2572,6 @@ upload_curseforge() {
 			version_id=$( echo "$_cf_versions" | jq -r --arg v "$version_name" --argjson t "$game_id" '.[] | select(.gameVersionTypeID == $t and .name == $v) | .id' )
 			_cf_game_version_id+=",${version_id}"
 		done
-		echo "Show debuf information"
-		echo $_cf_versions
-		echo $_cf_game_version
-		echo $_cf_game_version_id
 		_cf_game_version_id="[${_cf_game_version_id#,}]"
 		_cf_game_version="${_cf_game_version#,}"
 	fi
