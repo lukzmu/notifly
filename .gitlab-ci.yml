@@ -8,7 +8,6 @@ stages:
   only: 
     - tags
   script:
-    - echo ${CF_API_KEY}
     - apt-get update
     - apt-get install -y curl zip jq git
     - git --version
