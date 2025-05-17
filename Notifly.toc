@@ -1,7 +1,7 @@
-## Interface: 110100
+## Interface: 110105
 ## Title: |cff1784d1Notifly|r
 ## Notes: A simple addon that plays a sound when you get a whisper.
-## Version: 1.0.18
+## Version: 1.0.19
 ## X-Curse-Project-ID: 721773
 ## IconAtlas: communities-icon-chat
 
